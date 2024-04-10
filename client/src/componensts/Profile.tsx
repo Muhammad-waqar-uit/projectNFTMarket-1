@@ -10,9 +10,7 @@ const Profile = () => {
   const fetchUser = async () => {
     try {
       axios
-        .get(
-          `https://nftmarketdemo-server.vercel.app/users/getsingleuser/${address}`
-        )
+        .get(`http://localhost:5004/users/getsingleuser/${address}`)
         .then((res) => {
           console.log(res);
           setData(res.data);

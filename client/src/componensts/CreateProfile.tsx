@@ -15,7 +15,7 @@ const CreateProfileModal = () => {
     e.preventDefault();
     try {
       await axios
-        .post("https://nftmarketdemo-server.vercel.app/users/createuser", {
+        .post("http://localhost:5004/users/createuser", {
           username,
           email,
           walletAddress,

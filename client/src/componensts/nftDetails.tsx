@@ -1,7 +1,6 @@
-import  { useState, useEffect } from "react";
-import {  useParams } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import axios from "axios";
-
 
 type Data = {
   _id: string;
@@ -27,9 +26,7 @@ const NftDetailPage = () => {
   async function fetchData() {
     try {
       await axios
-        .get(
-          `https://nftmarketdemo-server.vercel.app/nfts/getsinglenft/${params._id}`
-        )
+        .get(`http://localhost:5004/nfts/getsinglenft/${params._id}`)
         .then((res) => {
           console.log("Res", res.data);
           setData(res.data);

@@ -21,9 +21,7 @@ export const MyNfts = () => {
   async function fetchData() {
     try {
       await axios
-        .get(
-          `https://nftmarketdemo-server.vercel.app/nfts/getownersnfts/${params.ownerAddress}`
-        )
+        .get(`http://localhost:5004/nfts/getownersnfts/${params.ownerAddress}`)
         .then((res) => {
           console.log("Res", res.data);
           setData(res.data);

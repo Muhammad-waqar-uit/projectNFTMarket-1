@@ -16,12 +16,10 @@ const NftCardContainer = () => {
   const [data, setData] = useState<NftData[]>([]);
   async function fetchData() {
     try {
-      await axios
-        .get("https://nftmarketdemo-server.vercel.app/nfts/getallnfts")
-        .then((res) => {
-          console.log("Res", res.data);
-          setData(res.data);
-        });
+      await axios.get("http://localhost:5004/nfts/getallnfts").then((res) => {
+        console.log("Res", res.data);
+        setData(res.data);
+      });
     } catch (error) {
       console.log({ error });
     }
